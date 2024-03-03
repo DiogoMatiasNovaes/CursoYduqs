@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro de Autores - Pro Books</title>
+</head>
+<body>
+<h1>Cadastro de Autores</h1>
+<form action="#" method="post" id="authorForm">
+  <div>
+    <label for="nome">Nome do Autor:</label><br>
+    <input type="text" id="nome" name="nome" required><br>
+  </div>
+  <div>
+    <label for="email">E-mail do Autor:</label><br>
+    <input type="email" id="email" name="email" required><br>
+  </div>
+  <div>
+    <label for="biografia">Biografia:</label><br>
+    <textarea id="biografia" name="biografia" rows="5" cols="40" minlength="100" maxlength="500" required></textarea><br>
+  </div>
+  <button type="button" onclick="executaCadastro()">Cadastrar Autor</button>
+</form>
+
+
+<script src="./js/cadastraAutor.js"></script>
+<script src="./js/executaCadastroAutor.js"></script>
+<script>
+  function executaCadastro() {
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const biografia = document.getElementById('biografia').value;
+
+    const autor = { nome, email, biografia };
+    cadastraAutor(autor);
+  }
+</script>
+</body>
+</html>
